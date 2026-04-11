@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicação de Teste</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Aplicação de Teste</h1>
+            <p>Status do Sistema: <span id="status" class="online">Online</span></p>
+        </header>
+        
+        <main>
+            <div class="card">
+                <h2>Detalhes do Ambiente</h2>
+                <ul>
+                    <li><strong>Ambiente:</strong> <span class="env-dev">Desenvolvimento</span></li>
+                    <li><strong>Container ID:</strong> <span class="container-id">{{HOSTNAME}}</span></li>
+                    <li><strong>Versão da Build:</strong> v1.0.0</li> 
+                    <li><strong>Última Atualização:</strong> <span id="timestamp">Carregando...</span></li>
+                </ul>
+            </div>
+            <button id="health-btn">Testar Health Check</button>
+        </main>
+
+        <footer>
+            <p>Pronto para integração com ferramentas de automação.</p>
+        </footer>
+    </div>
+
+
+    <script src="assets/js/script.js"></script>
+ </body>
+</html>
