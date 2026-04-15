@@ -39,7 +39,13 @@
 
    cd teste-pratico-devops
    ```
+### De forma automatizada
+2. O projeto conta com um `Makefile` inteligente. Basta executar o comando abaixo. Caso seja a sua primeira execução, o script solicitará interativamente o seu token do Ngrok (que você pode obter em [ngrok.com](https://ngrok.com) > Your Authtoken) para configurar o ambiente com segurança.
+   ```bash
+      make up
+   ```
 
+### De forma manual
 2. Configurar o Token do Ngrok _(caso ainda não tenha)_:
    1. Crie uma conta gratuita em [ngrok.com](https://ngrok.com) se ainda não tiver.
    2. No painel do Ngrok, vá em **Your Authtoken** e copie o token.
