@@ -31,7 +31,22 @@ const server = http.createServer((req, res) => {
         };
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify(healthcheck));
-    } 
+    }
+    // Métricas simples para Prometheus
+    else if (req.url === '/metrics') {
+        const uptime = process.uptime();
+        const metrics = [
+            '# HELP node_uptime_seconds Uptime do container em segundos.',
+            '# TYPE node_uptime_seconds gauge',
+            `node_uptime_seconds{container="${os.hostname()}"} ${uptime}`,
+            '# HELP node_status Status do container (1 = UP).',
+            '# TYPE node_status gauge',
+            `node_status{container="${os.hostname()}"} 1`
+        ].join('\n');
+        
+        res.writeHead(200, { 'Content-Type': 'text/plain; version=0.0.4' });
+        res.end(metrics + '\n');
+    }
     else if (req.url.startsWith('/assets/')) {
         const filePath = path.join(__dirname, req.url);
         

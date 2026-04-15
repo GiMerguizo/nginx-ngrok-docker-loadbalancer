@@ -77,3 +77,23 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
+
+  # ... seus outros serviços (nginx, app1, app2, ngrok) ...
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports:
+      - "9090:9090"
+    networks:
+      - default
+    depends_on:
+      - app1
+      - app2
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
