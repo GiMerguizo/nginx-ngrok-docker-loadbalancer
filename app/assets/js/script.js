@@ -14,6 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.json())
             .then(data => {
                 setTimeout(() => {
+                    const containerDisplay = document.querySelector('.container-id');
+                    if (containerDisplay) {
+                        containerDisplay.textContent = data.container;
+                    }
+                    
                     alert(`Health Check OK! \n\nContainer: ${data.container}\nStatus: ${data.status}\nUptime: ${data.uptime}s`);
                     healthBtn.textContent = originalText;
                     healthBtn.disabled = false;

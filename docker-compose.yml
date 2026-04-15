@@ -30,3 +30,17 @@ services:
     restart: unless-stopped
     networks:
       - default
+  ngrok:
+    image: ngrok/ngrok:latest
+    restart: unless-stopped
+    environment:
+      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN}
+    command:
+      - "http"
+      - "nginx:80"
+    ports:
+      - 4040:4040
+    depends_on:
+      - nginx
+    networks:
+      - default

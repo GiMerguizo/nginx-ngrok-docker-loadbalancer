@@ -36,14 +36,23 @@
    git clone https://github.com/GiMerguizo/teste-pratico-devops.git
    cd teste-pratico-devops
    ```
+2. Configurar o Token do Ngrok _(caso ainda não tenha)_
+   1. Crie uma conta gratuita em [ngrok.com](ngrok.com) se ainda não tiver.
+   2. No painel do Ngrok, vá em Your Authtoken e copie o token.
+   3. No seu terminal, antes de rodar o Docker Compose, exporte essa variável:
+      - Linux: `export NGROK_AUTHTOKEN="seu_token"`
+      - Windows: `$env:NGROK_AUTHTOKEN="seu_token_aqui"`
 
-2. Subir o ambiente:
+3. Subir o ambiente:
    ```bash
-   docker-compose up -d --build
+   docker-compose up -d
    ```
 
-3. Escalar instâncias (Opcional):
+4. Escalar instâncias (Opcional):
    Para testar o load balancer com mais instâncias:
    ```bash
    docker-compose up -d --scale app=3
    ```
+
+## Documentações
+- [Ngrok](https://ngrok.com/docs/using-ngrok-with/docker/compose)
