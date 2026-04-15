@@ -31,7 +31,7 @@
 
 ## ⚙️ Funcionamento
 1.  **Aplicação**: O Docker Compose sobe múltiplas instâncias (réplicas) de um servidor web simples.
-2.  **Load Balancer**: O Nginx recebe as requisições na porta `80` e as distribui em formato Round-Robin entre as instâncias da aplicação.
+2.  **Load Balancer**: O Nginx recebe as requisições na porta `80` e as distribui entre as instâncias da aplicação.
 
 ## 🚀 Como Executar
 
@@ -47,6 +47,11 @@
    ```bash
    make up
    ```
+
+3. Outros comandos:
+   - `make logs`: exibe os logs dos containers
+   - `make down`: derruba o ambiente
+   - `make rebuild`: reconstrói as imagens e sobe o ambiente
 
 ### De forma manual
 2. Configurar o Token do Ngrok _(se ainda não tiver)_:
