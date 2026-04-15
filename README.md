@@ -35,7 +35,7 @@
 
 1. Clonar o repositório:
    ```bash
-   git clone [https://github.com/GiMerguizo/teste-pratico-devops.git](https://github.com/GiMerguizo/teste-pratico-devops.git)
+   git clone https://github.com/GiMerguizo/teste-pratico-devops.git
 
    cd teste-pratico-devops
    ```
