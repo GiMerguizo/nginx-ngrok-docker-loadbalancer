@@ -94,6 +94,7 @@ Para escalar este ambiente para um cenário real de produção, recomendam-se as
 1. **Evolução da Observabilidade:** Integrar o **Grafana** para consumir as métricas do Prometheus que já estão sendo coletadas, criando dashboards interativos e sistema de alertas.
 2. **Infraestrutura como Código (IaC) e Cloud:** Migração do ambiente local para a nuvem (como **AWS**), provisionando toda a infraestrutura (instâncias EC2, Security Groups e balanceadores de carga nativos) de forma automatizada e versionada utilizando **Terraform**.
 3. **Automação de CI/CD:** Criação de pipelines automatizadas utilizando **Jenkins** para realizar o *build* das imagens Docker, rodar testes e realizar o deploy contínuo das novas versões da aplicação de forma transparente.
+4. **Aplicação Web:** Pegar automaticamente o ambiente de desenvolvimento.
 
 ## 📚 Documentações
 - [Makefile Tutorial](https://makefiletutorial.com/)
