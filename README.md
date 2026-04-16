@@ -1,6 +1,8 @@
 # Teste prático DevOps
 > Ambiente local utilizando Docker, Docker Compose e Nginx (proxy reverso e load balancer), em múltiplas instâncias, exposto externamente com Ngrok.
 
+[Demonstração do funcionamento do projeto](https://youtu.be/yWgKaDhfNvM)
+
 ## 🚧 Estrutura do Projeto
 ```text
 .
