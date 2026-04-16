@@ -94,5 +94,8 @@ Para escalar este ambiente para um cenário real de produção, recomendam-se as
 3. **Automação de CI/CD:** Criação de pipelines automatizadas utilizando **Jenkins** para realizar o *build* das imagens Docker, rodar testes e realizar o deploy contínuo das novas versões da aplicação de forma transparente.
 
 ## 📚 Documentações
+- [Makefile Tutorial](https://makefiletutorial.com/)
 - [Ngrok no Docker Compose](https://ngrok.com/docs/using-ngrok-with/docker/compose)
 - [Prometheus Scrape Configuration](https://prometheus.io/docs/prometheus/latest/configuration/configuration/)
+- [Utilizando o nginx como balanceador de carga HTTP](https://nginx.org/en/docs/http/load_balancing.html)
+- [X-Forwarded-For](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Reference/Headers/X-Forwarded-For)
