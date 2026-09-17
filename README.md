@@ -1,6 +1,8 @@
 # Teste prático DevOps
 > Ambiente local utilizando Docker, Docker Compose e Nginx (proxy reverso e load balancer), em múltiplas instâncias, exposto externamente com Ngrok.
 
+- **Link:** [Demonstração do funcionamento do projeto](https://youtu.be/yWgKaDhfNvM)
+
 ## 🚧 Estrutura do Projeto
 ```text
 .
@@ -92,7 +94,11 @@ Para escalar este ambiente para um cenário real de produção, recomendam-se as
 1. **Evolução da Observabilidade:** Integrar o **Grafana** para consumir as métricas do Prometheus que já estão sendo coletadas, criando dashboards interativos e sistema de alertas.
 2. **Infraestrutura como Código (IaC) e Cloud:** Migração do ambiente local para a nuvem (como **AWS**), provisionando toda a infraestrutura (instâncias EC2, Security Groups e balanceadores de carga nativos) de forma automatizada e versionada utilizando **Terraform**.
 3. **Automação de CI/CD:** Criação de pipelines automatizadas utilizando **Jenkins** para realizar o *build* das imagens Docker, rodar testes e realizar o deploy contínuo das novas versões da aplicação de forma transparente.
+4. **Aplicação Web:** Pegar automaticamente o ambiente de desenvolvimento.
 
 ## 📚 Documentações
+- [Makefile Tutorial](https://makefiletutorial.com/)
 - [Ngrok no Docker Compose](https://ngrok.com/docs/using-ngrok-with/docker/compose)
 - [Prometheus Scrape Configuration](https://prometheus.io/docs/prometheus/latest/configuration/configuration/)
+- [Utilizando o nginx como balanceador de carga HTTP](https://nginx.org/en/docs/http/load_balancing.html)
+- [X-Forwarded-For](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Reference/Headers/X-Forwarded-For)
