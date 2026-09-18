@@ -3,6 +3,17 @@
 
 - **Link:** [Demonstração do funcionamento do projeto](https://youtu.be/yWgKaDhfNvM)
 
+## 🏗️ Arquitetura
+- **Node.js, HTML, CSS e JS:** Backend leve servindo a página web e métricas de health check, sem frameworks pesados.
+- **Docker & Docker Compose**: Criação, orquestração e gerenciamento dos containers.
+- **Nginx**: Atuando como reverse proxy e load balancer.
+- **Ngrok**: Exposição externa do serviço de forma segura.
+- **Prometheus**: Coleta e armazenamento de métricas em tempo real (Observabilidade).
+- **Grafana**: Dashboards para visualização da saúde do ambiente
+<br>
+
+![arquitetura_loadbalancer](/docs/images/arquitetura_loadbalancer.png)
+
 ## 🚧 Estrutura do Projeto
 ```text
 .
@@ -30,14 +41,6 @@
 └── prometheus
     └── prometheus.yml
 ```
-
-## 🛠️ Tecnologias Utilizadas
-- **Node.js, HTML, CSS e JS:** Backend leve servindo a página web e métricas de health check, sem frameworks pesados.
-- **Docker & Docker Compose**: Criação, orquestração e gerenciamento dos containers.
-- **Nginx**: Atuando como reverse proxy e load balancer.
-- **Ngrok**: Exposição externa do serviço de forma segura.
-- **Prometheus**: Coleta e armazenamento de métricas em tempo real (Observabilidade).
-- **Grafana**: Dashboards para visualização da saúde do ambiente
 
 ## ⚙️ Funcionamento
 1.  **Aplicação**: O Docker Compose sobe múltiplas instâncias (réplicas) de um servidor web simples.
