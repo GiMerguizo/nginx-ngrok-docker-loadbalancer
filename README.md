@@ -6,22 +6,29 @@
 ## 🚧 Estrutura do Projeto
 ```text
 .
+├── Makefile
+├── README.md
 ├── app
+│   ├── Dockerfile
 │   ├── assets
 │   │   ├── css
 │   │   │   └── style.css
 │   │   └── js
 │   │       └── script.js
-│   ├── Dockerfile
 │   ├── index.html
 │   └── index.js
 ├── docker-compose.yml
-├── Makefile
+├── grafana
+│   └── provisioning
+│       ├── dashboards
+│       │   ├── Infra.json
+│       │   └── dashboards.yml
+│       └── datasources
+│           └── datasource.yml
 ├── nginx
 │   └── nginx.conf
-├── prometheus
-│   └── prometheus.yml
-└── README.md
+└── prometheus
+    └── prometheus.yml
 ```
 
 ## 🛠️ Tecnologias Utilizadas
@@ -30,6 +37,7 @@
 - **Nginx**: Atuando como reverse proxy e load balancer.
 - **Ngrok**: Exposição externa do serviço de forma segura.
 - **Prometheus**: Coleta e armazenamento de métricas em tempo real (Observabilidade).
+- **Grafana**: Dashboards para visualização da saúde do ambiente
 
 ## ⚙️ Funcionamento
 1.  **Aplicação**: O Docker Compose sobe múltiplas instâncias (réplicas) de um servidor web simples.
@@ -51,6 +59,7 @@
    ```
 
 3. Outros comandos:
+   - `make help`: exibe os comandos disponíveis com o Makefile
    - `make logs`: exibe os logs dos containers
    - `make down`: derruba o ambiente
    - `make rebuild`: reconstrói as imagens e sobe o ambiente
@@ -91,10 +100,9 @@
 
 Para escalar este ambiente para um cenário real de produção, recomendam-se as seguintes evoluções na arquitetura:
 
-1. **Evolução da Observabilidade:** Integrar o **Grafana** para consumir as métricas do Prometheus que já estão sendo coletadas, criando dashboards interativos e sistema de alertas.
-2. **Infraestrutura como Código (IaC) e Cloud:** Migração do ambiente local para a nuvem (como **AWS**), provisionando toda a infraestrutura (instâncias EC2, Security Groups e balanceadores de carga nativos) de forma automatizada e versionada utilizando **Terraform**.
-3. **Automação de CI/CD:** Criação de pipelines automatizadas utilizando **Jenkins** para realizar o *build* das imagens Docker, rodar testes e realizar o deploy contínuo das novas versões da aplicação de forma transparente.
-4. **Aplicação Web:** Pegar automaticamente o ambiente de desenvolvimento.
+1. **Infraestrutura como Código (IaC) e Cloud:** Migração do ambiente local para a nuvem (como **AWS**), provisionando toda a infraestrutura (instâncias EC2, Security Groups e balanceadores de carga nativos) de forma automatizada e versionada utilizando **Terraform**.
+2. **Automação de CI/CD:** Criação de pipelines automatizadas utilizando **Jenkins** para realizar o *build* das imagens Docker, rodar testes e realizar o deploy contínuo das novas versões da aplicação de forma transparente.
+3. **Aplicação Web:** Pegar automaticamente o ambiente de desenvolvimento.
 
 ## 📚 Documentações
 - [Makefile Tutorial](https://makefiletutorial.com/)

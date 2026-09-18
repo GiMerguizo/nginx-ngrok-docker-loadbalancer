@@ -5,4 +5,18 @@ scrape_configs:
   - job_name: 'nodejs_cluster'
     metrics_path: '/metrics' 
     static_configs:
-      - targets: ['app1:3000', 'app2:3000']
+      - targets: ['app1:5000', 'app2:5000']
+  - job_name: 'ngrok_health'
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
+    static_configs:
+      - targets:
+        - http://ngrok:4040/api/tunnels
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: blackbox-exporter:9115
